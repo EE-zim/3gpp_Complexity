@@ -1,0 +1,50 @@
+_wandb:
+    value:
+        cli_version: 0.19.11
+        m: []
+        python_version: 3.11.12
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 33
+                - 49
+                - 53
+                - 55
+                - 75
+            "2":
+                - 1
+                - 5
+                - 11
+                - 33
+                - 49
+                - 53
+                - 55
+                - 75
+            "3":
+                - 2
+                - 13
+                - 16
+                - 23
+                - 55
+                - 61
+            "4": 3.11.12
+            "5": 0.19.11
+            "6": 4.51.3
+            "8":
+                - 5
+            "12": 0.19.11
+            "13": darwin-arm64
+BATCH_SIZE:
+    value: 256
+BLOCK_SIZE:
+    value: 200000
+CPUS:
+    value: 12
+DEVICE:
+    value: mps
+MODEL_NAME:
+    value: sentence-transformers/all-MiniLM-L6-v2
+SPEC_ROOT:
+    value: /Users/ziming/Documents/WorkSpace/TSpec-LLM/3GPP-clean-test

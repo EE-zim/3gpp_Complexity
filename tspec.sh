@@ -34,6 +34,6 @@ export BATCH_SIZE=256
 export SPEC_ROOT=/mnt/parscratch/users/$USER/TSpec-LLM/3GPP-clean
 
 # 启动作业
-srun python tspec_metrics.py
+srun python tspec_metrics.py --wandb-project Tspec
 # 运行完毕后，输出完成消息  
 echo "Job completed successfully!"
