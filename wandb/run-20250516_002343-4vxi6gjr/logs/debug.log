@@ -1,0 +1,29 @@
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_setup.py:_flush():70] Current SDK version is 0.19.11
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_setup.py:_flush():70] Configure stats pid to 93334
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_setup.py:_flush():70] Loading settings from /Users/ziming/.config/wandb/settings
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_setup.py:_flush():70] Loading settings from /Users/ziming/Documents/WorkSpace/3gpp_Complexity/wandb/settings
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_setup.py:_flush():70] Loading settings from environment variables
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_init.py:setup_run_log_directory():724] Logging user logs to /Users/ziming/Documents/WorkSpace/3gpp_Complexity/wandb/run-20250516_002343-4vxi6gjr/logs/debug.log
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_init.py:setup_run_log_directory():725] Logging internal logs to /Users/ziming/Documents/WorkSpace/3gpp_Complexity/wandb/run-20250516_002343-4vxi6gjr/logs/debug-internal.log
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_init.py:init():852] calling init triggers
+2025-05-16 00:23:43,141 INFO    MainThread:93334 [wandb_init.py:init():857] wandb.init called with sweep_config: {}
+config: {'SPEC_ROOT': '/Users/ziming/Documents/WorkSpace/TSpec-LLM/3GPP-clean', 'BLOCK_SIZE': 200000, 'BATCH_SIZE': 256, 'CPUS': 12, 'DEVICE': 'mps', 'MODEL_NAME': 'sentence-transformers/all-MiniLM-L6-v2', '_wandb': {}}
+2025-05-16 00:23:43,142 INFO    MainThread:93334 [wandb_init.py:init():893] starting backend
+2025-05-16 00:23:43,142 INFO    MainThread:93334 [wandb_init.py:init():897] sending inform_init request
+2025-05-16 00:23:43,177 INFO    MainThread:93334 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2025-05-16 00:23:43,177 INFO    MainThread:93334 [wandb_init.py:init():907] backend started and connected
+2025-05-16 00:23:43,181 INFO    MainThread:93334 [wandb_init.py:init():1005] updated telemetry
+2025-05-16 00:23:43,195 INFO    MainThread:93334 [wandb_init.py:init():1029] communicating run to backend with 90.0 second timeout
+2025-05-16 00:23:43,626 INFO    MainThread:93334 [wandb_init.py:init():1104] starting run threads in backend
+2025-05-16 00:23:43,689 INFO    MainThread:93334 [wandb_run.py:_console_start():2573] atexit reg
+2025-05-16 00:23:43,689 INFO    MainThread:93334 [wandb_run.py:_redirect():2421] redirect: wrap_raw
+2025-05-16 00:23:43,689 INFO    MainThread:93334 [wandb_run.py:_redirect():2490] Wrapping output streams.
+2025-05-16 00:23:43,689 INFO    MainThread:93334 [wandb_run.py:_redirect():2513] Redirects installed.
+2025-05-16 00:23:43,691 INFO    MainThread:93334 [wandb_init.py:init():1150] run started, returning control to user process
+2025-05-16 00:23:44,760 INFO    MainThread:93334 [wandb_run.py:_finish():2321] finishing run eezim-Nokia/Tspec/4vxi6gjr
+2025-05-16 00:23:44,760 INFO    MainThread:93334 [wandb_run.py:_atexit_cleanup():2538] got exitcode: 0
+2025-05-16 00:23:44,760 INFO    MainThread:93334 [wandb_run.py:_restore():2520] restore
+2025-05-16 00:23:44,760 INFO    MainThread:93334 [wandb_run.py:_restore():2526] restore done
+2025-05-16 00:23:47,381 INFO    MainThread:93334 [wandb_run.py:_footer_history_summary_info():4188] rendering history
+2025-05-16 00:23:47,382 INFO    MainThread:93334 [wandb_run.py:_footer_history_summary_info():4220] rendering summary
+2025-05-16 00:23:47,382 INFO    MainThread:93334 [wandb_run.py:_footer_sync_info():4149] logging synced files
