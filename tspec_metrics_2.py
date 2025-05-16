@@ -266,7 +266,7 @@ def compute_metrics(X_all: np.ndarray, rel_slice: Dict[str, slice],
 # Main
 # ---------------------------------------------------------------------------
 
-def main() -> None:
+def main() -> None:w
     args = parse_args()
 
     # env hyper-params -----------------------------------------------------

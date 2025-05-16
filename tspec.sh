@@ -25,8 +25,8 @@ echo "module load completed successfully!"
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export NUMEXPR_NUM_THREADS=$SLURM_CPUS_PER_TASK
-export BLOCK_SIZE=200000
-export BATCH_SIZE=512
+export BLOCK_SIZE=2000000
+export BATCH_SIZE=1024
 echo "export completed successfully!"
 # 数据集根目录
 export SPEC_ROOT=/mnt/parscratch/users/$USER/TSpec-LLM/3GPP-clean
