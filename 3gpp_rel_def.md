@@ -29,7 +29,3 @@
 * **Rel-15 \~ Rel-17**：属于 **5G NR（New Radio）** 的不同阶段。
 * **Rel-18 \~ Rel-19**：属于 **5G-Advanced（5.5G）**，为 **向 6G 演进**做准备。
 * **Rel-6 / Rel-7 之前**：主要是 **3G（UMTS/HSPA）**。
-
----
-
-如你是研究协议栈的，某个特定 RRC message 的语义可能会在不同 Release 中略有差异，需要查阅对应 Release 的 3GPP TS 文档（如 TS 38.331 for 5G RRC）。如果你需要快速定位某个功能在哪个 Release 引入的，也可以告诉我具体功能，我帮你查对应版本。
