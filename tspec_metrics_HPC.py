@@ -197,8 +197,4 @@ if __name__ == '__main__':
     main()
 
 
-# python tspec_metrics_HPC.py --reset-checkpoint
-# python tspec_metrics_HPC.py
-# #或者第一个分句后：
-# python tspec_metrics_HPC.py --reset-checkpoint
 
