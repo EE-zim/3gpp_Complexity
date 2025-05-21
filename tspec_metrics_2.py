@@ -27,7 +27,7 @@ import torch, psutil
 import spacy
 from tqdm.auto import tqdm
 from sentence_transformers import SentenceTransformer, util
-from tspec_metrics_HPC import (
+from metric_utils import (
     semantic_spread,
     redundancy_index,
     cluster_entropy,
@@ -188,7 +188,7 @@ def compute_metrics(X_all: np.ndarray, rel_slice: Dict[str, slice],
                     wb_run: Optional["wandb.sdk.wandb_run.Run"]) -> None:
     print('[i] Computing metrics …')
 
-    # metric helpers imported from tspec_metrics_HPC
+    # metric helpers imported from metrics module
 
     # per-release ----------------------------------------------------------
     metrics, mus, pools = [], {}, {}

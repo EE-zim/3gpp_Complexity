@@ -1,4 +1,10 @@
+import os
+import sys
+
 import numpy as np
+
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from metric_utils import redundancy_index, cluster_entropy
 
 def test_redundancy_index():
     X = np.eye(3, dtype=float)
