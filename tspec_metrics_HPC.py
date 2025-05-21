@@ -15,40 +15,15 @@ import pandas as pd
 import torch
 import spacy
 from tqdm.auto import tqdm
-from sentence_transformers import SentenceTransformer, util
-from sklearn.cluster import KMeans
-from scipy.stats import entropy
+from sentence_transformers import SentenceTransformer
 
-
-def semantic_spread(X):
-    return float(np.trace(np.cov(X, rowvar=False)))
-
-
-def redundancy_index(X, k=1000):
-    if len(X) > k:
-        X = X[np.random.choice(len(X), k, replace=False)]
-    sims = util.cos_sim(X, X).cpu().numpy()
-    return 1.0 - float(sims[np.triu_indices_from(sims, 1)].mean())
-
-
-def cluster_entropy(X, sample=5000):
-    if len(X) > sample:
-        X = X[np.random.choice(len(X), sample, replace=False)]
-    labels = KMeans(n_clusters=int(np.sqrt(len(X))),
-                    n_init='auto', random_state=0).fit_predict(X)
-    p = np.bincount(labels) / len(labels)
-    return float(entropy(p, base=2))
-
-
-def change_mag(a, b):
-    return 1.0 - float(util.cos_sim(a, b))
-
-
-def novelty_density(Xp, Xn, k=2000):
-    if len(Xn) > k:
-        Xn = Xn[np.random.choice(len(Xn), k, replace=False)]
-    sims = util.cos_sim(Xn, Xp).cpu().numpy()
-    return float((1.0 - sims.max(1)).mean())
+from metric_utils import (
+    semantic_spread,
+    redundancy_index,
+    cluster_entropy,
+    change_mag,
+    novelty_density,
+)
 
 
 def parse_args():

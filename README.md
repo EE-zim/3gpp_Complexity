@@ -5,7 +5,8 @@ This repository contains scripts for computing semantic complexity metrics on 3G
 - `tspec_metrics_2.py` – feature rich pipeline with optional Weights & Biases logging.
 - `tspec_metrics_HPC.py` – simplified version suitable for batch processing or HPC usage.
 
-Both scripts share metric helper functions such as `semantic_spread`, `redundancy_index`, and `cluster_entropy`.
+Metric helper functions such as `semantic_spread`, `redundancy_index`, and
+`cluster_entropy` are defined in `metric_utils.py` and used by both scripts.
 
 ## Running the Pipeline
 
