@@ -19,8 +19,14 @@ import torch, psutil
 import spacy
 from tqdm.auto import tqdm
 from sentence_transformers import SentenceTransformer, util
-from sklearn.cluster import KMeans, MiniBatchKMeans
-from scipy.stats import entropy
+
+from tspec_metrics_HPC import (
+    semantic_spread,
+    redundancy_index,
+    cluster_entropy,
+    change_mag,
+    novelty_density,
+)
 
 try:
     import pynvml
@@ -175,35 +181,7 @@ def compute_metrics(X_all: np.ndarray, rel_slice: Dict[str, slice],
                     wb_run: Optional["wandb.sdk.wandb_run.Run"]) -> None:
     print('[i] Computing metrics …')
 
-    # helper ---------------------------------------------------------------
-    def semantic_spread(X: np.ndarray) -> float:
-        return float(np.trace(np.cov(X, rowvar=False)))
-
-    def redundancy_index(X: np.ndarray, k: int = 1000) -> float:
-        if len(X) > k:
-            X = X[np.random.choice(len(X), k, replace=False)]
-        sims = util.cos_sim(X, X).cpu().numpy()
-        return 1.0 - float(sims[np.triu_indices_from(sims, 1)].mean())
-
-    def cluster_entropy(X: np.ndarray, sample: int = 5000) -> float:
-        if len(X) > sample:
-            X = X[np.random.choice(len(X), sample, replace=False)]
-        print('      ↳ KMeans …')
-        labels = MiniBatchKMeans(n_clusters=int(np.sqrt(len(X))), batch_size=2048,
-                                 n_init='auto', random_state=0).fit_predict(X)
-        p = np.bincount(labels) / len(labels)
-        return float(entropy(p, base=2))
-
-    def change_mag(a: np.ndarray, b: np.ndarray) -> float:
-        return 1.0 - float(util.cos_sim(a, b))
-
-    def novelty_density(Xp: np.ndarray, Xn: np.ndarray, k: int = 2000) -> float:
-        if len(Xn) > k:
-            Xn = Xn[np.random.choice(len(Xn), k, replace=False)]
-        if len(Xp) > k:
-            Xp = Xp[np.random.choice(len(Xp), k, replace=False)]
-        sims = util.cos_sim(Xn, Xp).cpu().numpy()
-        return float((1.0 - sims.max(1)).mean())
+    # metric helpers imported from tspec_metrics_HPC
 
     # per-release ----------------------------------------------------------
     metrics, mus, pools = [], {}, {}
@@ -266,7 +244,7 @@ def compute_metrics(X_all: np.ndarray, rel_slice: Dict[str, slice],
 # Main
 # ---------------------------------------------------------------------------
 
-def main() -> None:w
+def main() -> None:
     args = parse_args()
 
     # env hyper-params -----------------------------------------------------

@@ -20,6 +20,37 @@ from sklearn.cluster import KMeans
 from scipy.stats import entropy
 
 
+def semantic_spread(X):
+    return float(np.trace(np.cov(X, rowvar=False)))
+
+
+def redundancy_index(X, k=1000):
+    if len(X) > k:
+        X = X[np.random.choice(len(X), k, replace=False)]
+    sims = util.cos_sim(X, X).cpu().numpy()
+    return 1.0 - float(sims[np.triu_indices_from(sims, 1)].mean())
+
+
+def cluster_entropy(X, sample=5000):
+    if len(X) > sample:
+        X = X[np.random.choice(len(X), sample, replace=False)]
+    labels = KMeans(n_clusters=int(np.sqrt(len(X))),
+                    n_init='auto', random_state=0).fit_predict(X)
+    p = np.bincount(labels) / len(labels)
+    return float(entropy(p, base=2))
+
+
+def change_mag(a, b):
+    return 1.0 - float(util.cos_sim(a, b))
+
+
+def novelty_density(Xp, Xn, k=2000):
+    if len(Xn) > k:
+        Xn = Xn[np.random.choice(len(Xn), k, replace=False)]
+    sims = util.cos_sim(Xn, Xp).cpu().numpy()
+    return float((1.0 - sims.max(1)).mean())
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Compute TSpec-LLM release metrics with checkpointing and parallelism.")
     parser.add_argument('--reset-checkpoint', action='store_true',
@@ -101,30 +132,6 @@ def compute_metrics(all_sents: list, rel_slice: dict,
     )
     X_all = np.asarray(emb)
 
-    def semantic_spread(X):
-        return float(np.trace(np.cov(X, rowvar=False)))
-
-    def redundancy_index(X, k=1000):
-        if len(X) > k:
-            X = X[np.random.choice(len(X), k, replace=False)]
-        sims = util.cos_sim(X, X).cpu().numpy()
-        return 1.0 - float(sims[np.triu_indices_from(sims, 1)].mean())
-
-    def cluster_entropy(X):
-        labels = KMeans(n_clusters=int(np.sqrt(len(X))),
-                        n_init='auto', random_state=0).fit_predict(X)
-        p = np.bincount(labels) / len(labels)
-        return float(entropy(p, base=2))
-
-    def change_mag(a, b):
-        return 1.0 - float(util.cos_sim(a, b))
-
-    def novelty_density(Xp, Xn, k=2000):
-        if len(Xn) > k:
-            Xn = Xn[np.random.choice(len(Xn), k, replace=False)]
-        sims = util.cos_sim(Xn, Xp).cpu().numpy()
-        return float((1.0 - sims.max(1)).mean())
-
     metrics = []
     mus = {}
     mats = {}
@@ -190,7 +197,8 @@ if __name__ == '__main__':
     main()
 
 
-# python tspec_metrics.py --reset-checkpoint
-# python tspec_metrics.py
+# python tspec_metrics_HPC.py --reset-checkpoint
+# python tspec_metrics_HPC.py
 # #或者第一个分句后：
-# python tspec_metrics.py --reset-checkpoint
+# python tspec_metrics_HPC.py --reset-checkpoint
+
