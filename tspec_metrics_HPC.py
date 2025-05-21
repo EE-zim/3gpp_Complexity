@@ -197,7 +197,4 @@ if __name__ == '__main__':
     main()
 
 
-# Example usage:
-# python tspec_metrics_HPC.py --reset-checkpoint
-# python tspec_metrics_HPC.py
 

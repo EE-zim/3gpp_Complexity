@@ -29,3 +29,30 @@
 * **Rel-15 \~ Rel-17**：属于 **5G NR（New Radio）** 的不同阶段。
 * **Rel-18 \~ Rel-19**：属于 **5G-Advanced（5.5G）**，为 **向 6G 演进**做准备。
 * **Rel-6 / Rel-7 之前**：主要是 **3G（UMTS/HSPA）**。
+
+
+### **3GPP Release Mapping Table**
+
+| Release | Key Features                                  | Corresponding Generation | Release Year       |
+| ------- | --------------------------------------------- | ------------------------ | ------------------ |
+| Rel-8   | Introduction of **LTE (Long Term Evolution)** | Initial 4G               | 2008               |
+| Rel-9   | LTE enhancements (e.g., Dual-layer MIMO)      | 4G                       | 2009               |
+| Rel-10  | Introduction of **LTE-Advanced**              | Enhanced 4G              | 2011               |
+| Rel-11  | Enhanced Carrier Aggregation                  | 4G                       | 2012               |
+| Rel-12  | Support for D2D, Small Cells, etc.            | 4G / Transitional        | 2014               |
+| Rel-13  | LTE-Advanced Pro (e.g., NB-IoT)               | 4.5G / Pre-5G            | 2016               |
+| Rel-14  | V2X, eMTC, and more                           | 4.5G                     | 2017               |
+| Rel-15  | **First 5G NR Standard** (NSA/SA)             | **Initial 5G**           | 2018               |
+| Rel-16  | 5G enhancements (e.g., URLLC, V2X)            | 5G                       | 2020               |
+| Rel-17  | 5G expansion (e.g., RedCap, NTN)              | Enhanced 5G              | 2022               |
+| Rel-18  | **First phase of 5G-Advanced**                | 5.5G                     | 2024      |
+| Rel-19  | **Second phase of 5G-Advanced**               | 5.5G / Towards 6G        | Expected 2025–2026 |
+
+---
+
+### Summary:
+
+* **Rel-8 to Rel-14**: Mainly cover **4G LTE and its evolution** (also known as LTE-A, LTE-A Pro).
+* **Rel-15 to Rel-17**: Represent various stages of **5G NR (New Radio)**.
+* **Rel-18 to Rel-19**: Fall under **5G-Advanced (5.5G)** and serve as a **stepping stone toward 6G**.
+* **Releases prior to Rel-6/Rel-7**: Primarily represent **3G (UMTS/HSPA)**.
