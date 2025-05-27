@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/EE-zim/3gpp_Complexity)
+
 # 3GPP Complexity Metrics
 
 
