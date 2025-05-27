@@ -3,7 +3,7 @@ import sys
 
 import numpy as np
 
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), "src"))
 from metric_utils import redundancy_index, cluster_entropy
 
 def test_redundancy_index():
