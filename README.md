@@ -1,5 +1,7 @@
 # 3GPP Complexity Metrics
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/EE-zim/3gpp_Complexity)
+
 This repository contains scripts for computing semantic complexity metrics on 3GPP specification text. The main entry points are:
 
 The repository is organised as follows:
