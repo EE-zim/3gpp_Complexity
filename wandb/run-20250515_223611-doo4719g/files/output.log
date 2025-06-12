@@ -1,9 +1,0 @@
-Starting sentence‑splitting phase...
-Releases: Rel-8, Rel-9
-Splitting Rel-8: 109chunk [00:11,  9.53chunk/s]
-Splitting Rel-9: 114chunk [00:40,  2.81chunk/s]
-Collected 51,215 sentences, saving checkpoint to checkpoint.pkl
-Encoding sentences and computing metrics...
-Batches: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 201/201 [00:31<00:00,  6.39it/s]
-Saved release_metrics.csv
-Saved delta_metrics.csv
